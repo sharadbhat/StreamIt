@@ -27,10 +27,10 @@ router.post('/register', (req, res) => {
   }
 
   if (success) {
-    res.json({"Success" : "true"})
+    res.json({"Success" : "true"});
   }
   else {
-    res.json({"Success" : "false"})
+    res.json({"Success" : "false"});
   }
 });
 
