@@ -1,58 +1,66 @@
 const express = require('express');
-const fs = require('fs');
-const uuid = require('../helpers/generate-uuid');
 const hashing = require('../helpers/hashing');
 const compareHash = require('../helpers/compare-hash');
-// const isNotUnique = require('./is-not-unique');
+const addUser = require('../middlewares/add-user');
+const getHash = require('../middlewares/get-hash');
+const doesUsernameExist = require('../middlewares/does-username-exist');
+const getUsernameLine = require('../middlewares/get-username-line');
 
 const router = express.Router();
 
-router.post('/add', (req, res) => {
+router.post('/register', (req, res) => {
+  success = true;
   try {
     username = req.body.username;
     password = req.body.password;
 
-//    if (isNotUnique(username)) {
-//      res.json({"Success" : "false"});
-//    }
-
-    userID = uuid();
-    passwordHash = hashing(password);
-
-    data = userID + "|" + username + "|" + passwordHash + "#";
-
-    logStream = fs.createWriteStream('./data/users.txt', {'flags': 'a'});
-    logStream.end(data);
-
-    res.json({"Success" : "true"})
+    if (doesUsernameExist(username)) {
+      success = false;
+    }
+    else {
+      passwordHash = hashing(password);
+      addUser(username, passwordHash);
+    }
   }
   catch (e) {
-    res.json({"Success" : "false"});
+    success = false;
+  }
+
+  if (success) {
+    res.json({"Success" : "true"})
+  }
+  else {
+    res.json({"Success" : "false"})
   }
 });
 
+
+
 router.post('/login', (req, res) => {
+  success = true;
   try {
     username = req.body.username;
     password = req.body.password;
 
-    userID = getUserID(username);
     passwordHash = "";
-    if (userID !== false) {
-//      passwordHash = getPasswordHash(username);
+    if (doesUsernameExist(username)) {
+      passwordHash = getHash(getUsernameLine(username));
+      if (!compareHash(password, passwordHash)) {
+        success = false;
+      }
     }
     else {
-      res.json({"Success" : "false"});
-    }
-
-    if (compareHash(password, passwordHash)) {
-      res.json({"Success" : "true"});
-    }
-    else {
-      res.json({"Success" : "false"});
+      success = false;
     }
   }
   catch (e) {
+    success = false;
+  }
+
+  if (success) {
+    res.json({"Success" : "true"});
+  }
+  else {
     res.json({"Success" : "false"});
   }
 });
