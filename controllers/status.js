@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', function (req, res) {
-  res.json({"status" : "Active"})
+  res.json({"status" : "active"})
 });
 
 module.exports = router;
