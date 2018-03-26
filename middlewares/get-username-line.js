@@ -5,7 +5,7 @@ const getUsernameLine = function (username) {
 
   for (var i = 0; i < fileContents.length; i++) {
     if (username === fileContents[i].split("|")[0]) {
-      return (fileContents[i].split("|")[1]).slice(0,-1);
+      return (fileContents[i].split("|")[1]).slice(0, -1);
     }
   }
 }
