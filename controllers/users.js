@@ -27,10 +27,10 @@ router.post('/register', (req, res) => {
   }
 
   if (success) {
-    res.json({"Success" : "true"});
+    res.json({"success" : "true"});
   }
   else {
-    res.json({"Success" : "false"});
+    res.json({"success" : "false"});
   }
 });
 
@@ -58,10 +58,10 @@ router.post('/login', (req, res) => {
   }
 
   if (success) {
-    res.json({"Success" : "true"});
+    res.json({"success" : "true"});
   }
   else {
-    res.json({"Success" : "false"});
+    res.json({"success" : "false"});
   }
 });
 
