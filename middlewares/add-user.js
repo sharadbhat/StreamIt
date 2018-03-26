@@ -14,10 +14,17 @@ function sortUserIndex() {
   fs.writeFileSync('./data/users-index.txt', string);
 }
 
-const addUser = function (username, passwordHash) {
-  lineNumber = getLastLineNumber();
 
-  data = lineNumber + "|" + username + "|" + passwordHash + "#\n";
+/**
+ * Adds user data to file and sorts index file.
+ * @param {string} username - Username of user.
+ * @param {string} password - The plaintext password of the user..
+ * @returns {undefined}
+ */
+const addUser = function (username, passwordHash) {
+  lineNumber = getLastLineNumber(); // To get line at which record is added.
+
+  data = username + "|" + passwordHash + "#\n";
   fs.appendFileSync('./data/users.txt', data);
 
   data = username + "|" + lineNumber + "#\n";
