@@ -38,7 +38,6 @@ router.get('/details/:songID', (req, res) => {
   }
   else {
     lineNumber = getMusicLine(songID);
-    console.log(lineNumber);
     details = retrieveSongDetails(lineNumber);
   }
 
