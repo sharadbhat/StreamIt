@@ -1,10 +1,23 @@
 const express = require('express');
+const doesSongExist = require('../middlewares/does-song-exist');
 
 const router = express.Router();
 
 router.get('/:songID', (req, res) => {
   songID = req.params['songID'];
-  // TODO: Open file and get data and send as response.
+
+  success = true;
+
+  if (!doesSongExist(songID)) {
+    success = false;
+  }
+
+  if (success) {
+    res.sendFile('images/' + songID + '.jpg', {root: './data/'});
+  }
+  else {
+    res.json({"success" : "false"});
+  }
 });
 
 module.exports = router;
