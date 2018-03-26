@@ -1,9 +1,11 @@
-const fs = require('fs');
+const rl = require('readline-specific');
+const wait = require('wait-for-stuff');
 
 const getHash = function (lineNumber) {
-  var contents = (fs.readFileSync('./data/users.txt').toString()).split('\n')[lineNumber - 1];
-  contents = (contents.split('|')[2]).slice(0, -1);
-  return contents;
+  hash = wait.for.callback(rl.oneline, './data/users.txt', lineNumber);
+  hash = hash.split('|')[2].slice(0, -1);
+
+  return hash;
 };
 
 module.exports = getHash;
