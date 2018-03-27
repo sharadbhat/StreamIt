@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const image = require('./controllers/image');
 const music = require('./controllers/music');
+const random = require('./controllers/random');
 const status = require('./controllers/status');
 const users = require('./controllers/users');
 
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/image', image);
 app.use('/music', music);
+app.use('/random', random);
 app.use('/status', status);
 app.use('/users', users);
 
