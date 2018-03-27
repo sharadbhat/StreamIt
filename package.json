@@ -11,6 +11,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "fuzzy-search": "^2.0.1",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
     "readline-specific": "^1.0.4",
