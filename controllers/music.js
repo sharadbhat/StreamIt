@@ -20,7 +20,7 @@ router.get('/:songID', (req, res) => {
     res.sendFile('music/' + songID + '.mp3', {root: './data/'});
   }
   else {
-    res.json({"success" : "false"});
+    res.json({"success" : success});
   }
 });
 
@@ -43,7 +43,7 @@ router.get('/details/:songID', (req, res) => {
     res.json({"details" : details});
   }
   else {
-    res.json({"success" : "false"});
+    res.json({"success" : success});
   }
 });
 

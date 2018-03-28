@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     res.json({"id" : randomID});
   }
   else {
-    res.json({"success" : "false"});
+    res.json({"success" : success});
   }
 });
 

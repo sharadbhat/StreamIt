@@ -26,12 +26,7 @@ router.post('/register', (req, res) => {
     success = false;
   }
 
-  if (success) {
-    res.json({"success" : "true"});
-  }
-  else {
-    res.json({"success" : "false"});
-  }
+  res.json({"success" : success});
 });
 
 
@@ -57,12 +52,7 @@ router.post('/login', (req, res) => {
     success = false;
   }
 
-  if (success) {
-    res.json({"success" : "true"});
-  }
-  else {
-    res.json({"success" : "false"});
-  }
+  res.json({"success" : success});
 });
 
 module.exports = router;
