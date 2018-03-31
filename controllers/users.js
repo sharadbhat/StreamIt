@@ -17,13 +17,14 @@ router.post('/register', (req, res) => {
     if (username.match('[|]')) {
       success = false;
     }
-
-    if (doesUsernameExist(username)) {
-      success = false;
-    }
     else {
-      passwordHash = hashing(password);
-      addUser(username, passwordHash);
+      if (doesUsernameExist(username)) {
+          success = false;
+      }
+      else {
+        passwordHash = hashing(password);
+        addUser(username, passwordHash);
+      }
     }
   }
   catch (e) {
