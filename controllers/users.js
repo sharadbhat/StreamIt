@@ -14,6 +14,10 @@ router.post('/register', (req, res) => {
     username = req.body.username;
     password = req.body.password;
 
+    if (username.match('[|]')) {
+      success = false;
+    }
+
     if (doesUsernameExist(username)) {
       success = false;
     }
