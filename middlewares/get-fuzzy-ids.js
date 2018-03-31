@@ -1,6 +1,11 @@
 const fs = require('fs');
 const getClosestIDs = require('../helpers/get-closest-ids');
 
+/**
+ * Returns the IDs of the music of closest matching artist names.
+ * @param {string} artistName - Name of the artist entered by the user.
+ * @returns {string []} - Array of music IDs.
+ */
 const getFuzzyIDs = function (artistName) {
   contents = fs.readFileSync('./data/music-secondary-index.txt').toString().split('\n');
   contents.pop();
