@@ -10,6 +10,12 @@ Then head over to http://localhost:3000 to see it in action.
 
 ### API endpoints
 
+#### Status
+
+http://localhost:3000/status
+
+Returns JSON data.
+
 #### Registration
 
 http://localhost:3000/register
