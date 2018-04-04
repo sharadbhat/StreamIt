@@ -10,15 +10,24 @@ const getFuzzyIDs = function (artistName) {
   contents = fs.readFileSync('./data/music-secondary-index.txt').toString().split('\n');
   contents.pop();
 
+  invertedListFile = fs.readFileSync('./data/music-inverted-list.txt').toString().split('\n');
+
   jsonData = [];
   for (var i = 0; i < contents.length; i++) {
     contentData = contents[i].split('|');
     name = contentData[0];
     ids = [];
-    for (var j = 1; j < contentData.length - 1; j++) {
-      ids.push(contentData[j]);
+    startPosition = contentData[1].slice(0, -2);
+
+
+    while (true) {
+      invertedFileRecord = invertedListFile[startPosition - 1].split('|');
+      ids.push(invertedFileRecord[0]);
+      startPosition = invertedFileRecord[1].slice(0, -2);
+      if (startPosition === '-1') {
+        break;
+      }
     }
-    ids.push((contentData[contentData.length - 1]).slice(0, -2));
 
     jsonData.push({'name' : name, 'ids' : ids});
   }
