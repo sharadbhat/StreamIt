@@ -17,8 +17,8 @@ const getFuzzyIDs = function (artistName) {
     contentData = contents[i].split('|');
     name = contentData[0];
     ids = [];
-    startPosition = contentData[1].slice(0, -2);
 
+    startPosition = contentData[1].slice(0, -2);
 
     while (true) {
       invertedFileRecord = invertedListFile[startPosition - 1].split('|');
