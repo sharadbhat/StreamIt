@@ -56,7 +56,7 @@ http://localhost:3000/music/details/song-id
 
 `song-id` - ID of the requested song.
 
-Returns data in the form of JSON.
+Returns data in JSON format.
 
 #### Album Artist
 `GET`
