@@ -1,5 +1,6 @@
-aakash|5#
 mohandas|4#
-shaman|2#
-sharad|3#
-suman|1#
+nithin|6#
+shaman|3#
+sharad|1#
+suman|5#
+yeetesh|2#
