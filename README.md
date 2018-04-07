@@ -58,7 +58,7 @@ http://localhost:3000/music/details/song-id
 
 Returns data in JSON format.
 
-#### Album Artist
+#### Album Art
 `GET`
 http://localhost:3000/image/song-id
 
