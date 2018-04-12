@@ -16,7 +16,7 @@ router.get('/:songID', (req, res) => {
     res.sendFile('images/' + songID + '.jpg', {root: './data/'});
   }
   else {
-    res.json({"success" : success});
+    res.status(status).json({"success" : success});
   }
 });
 
