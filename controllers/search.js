@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   searchQuery = req.query['query'];
 
   success = true;
-  if (searchQuery === undefined) {
+  if (searchQuery === undefined || searchQuery === "") {
     success = false;
   }
 
@@ -20,6 +20,9 @@ router.get('/', (req, res) => {
 
   if (success) {
     res.json({'ids' : ids});
+  }
+  else {
+    res.json({'success' : success});
   }
 });
 
