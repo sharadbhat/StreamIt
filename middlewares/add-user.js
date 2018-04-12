@@ -1,6 +1,10 @@
 const fs = require('fs');
 const getLastLineNumber = require('../middlewares/get-last-line-number');
 
+/**
+ * Sorts the users-index.txt file.
+ * @returns {undefined}
+ */
 function sortUserIndex() {
   var contents = (fs.readFileSync('./data/users-index.txt').toString()).split('\n');
   contents.pop();
@@ -18,7 +22,7 @@ function sortUserIndex() {
 /**
  * Adds user data to file and sorts index file.
  * @param {string} username - Username of user.
- * @param {string} password - The plaintext password of the user..
+ * @param {string} password - The plaintext password of the user.
  * @returns {undefined}
  */
 const addUser = function (username, passwordHash) {
