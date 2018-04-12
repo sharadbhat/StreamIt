@@ -10,9 +10,11 @@ const router = express.Router();
 router.get('/:songID', (req, res) => {
   songID = req.params['songID'];
 
+  status = 200;
   success = true;
 
   if (!doesSongExist(songID)) {
+    status = 404;
     success = false;
   }
 
@@ -20,7 +22,7 @@ router.get('/:songID', (req, res) => {
     res.sendFile('music/' + songID + '.mp3', {root: './data/'});
   }
   else {
-    res.json({"success" : success});
+    res.status(status).json({"success" : success});
   }
 });
 
@@ -29,9 +31,11 @@ router.get('/:songID', (req, res) => {
 router.get('/details/:songID', (req, res) => {
   songID = req.params['songID'];
 
+  status = 200;
   success = true;
   details = {};
   if(!doesSongExist(songID)) {
+    status = 400;
     success = false;
   }
   else {
@@ -43,7 +47,7 @@ router.get('/details/:songID', (req, res) => {
     res.json({"details" : details});
   }
   else {
-    res.json({"success" : success});
+    res.status(status).json({"success" : success});
   }
 });
 
