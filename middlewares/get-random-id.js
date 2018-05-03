@@ -7,7 +7,8 @@ const fs = require('fs');
 const getRandomID = function () {
   contents = fs.readFileSync('./data/music-index.txt').toString().split('\n');
   contents.pop();
-  random = (contents[Math.floor(Math.random()*contents.length)]).slice(0, -4);
+  random = (contents[Math.floor(Math.random()*contents.length)]);
+  random = random.split('|')[0];
 
   return random;
 }
