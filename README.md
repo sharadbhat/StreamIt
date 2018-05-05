@@ -10,19 +10,19 @@ node app.js
 
 Then head on over to http://localhost:3000 to see it in action.
 
-### API endpoints
+## API endpoints
 
-#### Status
+### Status
 `GET`
 http://localhost:3000/status
 
 Returns JSON data.
 
-#### Registration
+### Registration
 `POST`
 http://localhost:3000/users/register
 
-##### Necessary fields
+#### Necessary fields
 
 Field Name | Value
 --- | ---
@@ -31,11 +31,11 @@ Field Name | Value
 
 Data must be sent in the request body as `x-www-form-urlencoded` data.
 
-#### Login
+### Login
 `POST`
 http://localhost:3000/users/login
 
-##### Necessary fields
+#### Necessary fields
 
 Field Name | Value
 --- | ---
@@ -44,7 +44,7 @@ Field Name | Value
 
 Data must be sent in the request body as `x-www-form-urlencoded` data.
 
-#### Song File
+### Song File
 `GET`
 http://localhost:3000/music/< song-id >
 
@@ -52,7 +52,7 @@ http://localhost:3000/music/< song-id >
 
 Returns a MP3 file if it exists, else a JSON.
 
-#### Song Details
+### Song Details
 `GET`
 http://localhost:3000/music/details/< song-id >
 
@@ -60,7 +60,7 @@ http://localhost:3000/music/details/< song-id >
 
 Returns data in JSON format.
 
-#### Album Art
+### Album Art
 `GET`
 http://localhost:3000/image/< song-id >
 
@@ -68,7 +68,7 @@ http://localhost:3000/image/< song-id >
 
 Returns a JPG file if it exists, else a JSON.
 
-#### Favorites
+### Favorites
 `GET`
 http://localhost:3000/favorites/< username >
 
@@ -78,7 +78,7 @@ Returns details of all songs favorited by the user, if the user exists.
 If no song has been favorited yet, returns an empty list.
 If user does not exist, returns 404 error.
 
-#### Search
+### Search
 `GET`
 http://localhost:3000/search?query=< query >
 
