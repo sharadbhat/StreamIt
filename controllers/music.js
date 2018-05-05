@@ -39,10 +39,13 @@ router.get('/details/:songID', (req, res) => {
     success = false;
   }
   else {
+    details["id"] = songID;
     lineNumber = getMusicLine(songID);
-    details = retrieveSongDetails(lineNumber);
+    details = {
+      ...details,
+      ...retrieveSongDetails(lineNumber)};
   }
-
+  
   if (success) {
     res.json({"details" : details});
   }
