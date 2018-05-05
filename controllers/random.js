@@ -11,10 +11,10 @@ router.get('/', (req, res) => {
   try {
     randomID = []
     randomID = getRandomIDs();
-    randomIDs = [];
+    randomSongs = [];
     for (var i = 0; i < randomID.length; i++) {
       id = randomID[i];
-      randomIDs.push({
+      randomSongs.push({
         id,
         ...getDetails(getLine(id))
       });
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
   }
 
   if (success) {
-    res.json({"songs" : randomIDs});
+    res.json({"songs" : randomSongs});
   }
   else {
     res.json({"success" : success});
