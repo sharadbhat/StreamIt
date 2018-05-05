@@ -6,6 +6,8 @@ const doesUsernameExist = require('../middlewares/does-username-exist');
 const getUsernameLine = require('../middlewares/get-username-line');
 const addToFavorites = require('../middlewares/add-to-favorites');
 const getFavorites = require('../middlewares/get-favorites');
+const getDetails = require('../middlewares/retrieve-song-details');
+const getLine = require('../middlewares/get-music-line');
 
 const router = express.Router();
 
@@ -20,10 +22,19 @@ router.get('/:user', (req, res) => {
   }
   else {
     favorites = getFavorites(username);
+
+    favSongs = [];
+    for (var i = 0; i < favorites.length; i++) {
+      id = favorites[i];
+      favSongs.push({
+        id,
+        ...getDetails(getLine(id))
+      });
+    }
   }
 
   if (success) {
-    res.json({"ids" : favorites});
+    res.json({"favorites" : favSongs});
   }
   else {
     res.status(status).json({"success" : success});
