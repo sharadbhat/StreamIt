@@ -44,7 +44,7 @@ Data must be sent in the request body as `x-www-form-urlencoded` data.
 
 #### Song File
 `GET`
-http://localhost:3000/music/song-id
+http://localhost:3000/music/< song-id >
 
 `song-id` - ID of the requested song.
 
@@ -52,7 +52,7 @@ Returns a MP3 file if it exists, else a JSON.
 
 #### Song Details
 `GET`
-http://localhost:3000/music/details/song-id
+http://localhost:3000/music/details/< song-id >
 
 `song-id` - ID of the requested song.
 
@@ -60,8 +60,30 @@ Returns data in JSON format.
 
 #### Album Art
 `GET`
-http://localhost:3000/image/song-id
+http://localhost:3000/image/< song-id >
 
 `song-id` - ID of the requested song.
 
 Returns a JPG file if it exists, else a JSON.
+
+#### Favorites
+`GET`
+http://localhost:3000/favorites/< username >
+
+`username` - Username of the user.
+
+Returns details of all songs favorited by the user, if the user exists.
+If no song has been favorited yet, returns an empty list.
+If user does not exist, returns 404 error.
+
+#### Search
+`GET`
+http://localhost:3000/search?query=< query >
+
+Returns details of all songs with artist names closely matching the search query.
+
+### Random
+`GET`
+http://localhost:3000/random
+
+Returns details of 5 random songs.
