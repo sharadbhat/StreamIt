@@ -6,7 +6,7 @@
 node app.js
 ```
 
-Then head over to http://localhost:3000 to see it in action.
+Then head on over to http://localhost:3000 to see it in action.
 
 ### API endpoints
 
@@ -18,7 +18,7 @@ Returns JSON data.
 
 #### Registration
 `POST`
-http://localhost:3000/register
+http://localhost:3000/users/register
 
 ##### Necessary fields
 
@@ -31,7 +31,7 @@ Data must be sent in the request body as `x-www-form-urlencoded` data.
 
 #### Login
 `POST`
-http://localhost:3000/login
+http://localhost:3000/users/login
 
 ##### Necessary fields
 
