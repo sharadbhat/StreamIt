@@ -16,6 +16,7 @@
     "pug": "2.0.0-beta11",
     "readline-specific": "^1.0.4",
     "serve-favicon": "~2.4.5",
+    "shuffle-array": "^1.0.1",
     "wait-for-stuff": "^1.4.0"
   }
 }
