@@ -31,6 +31,10 @@ Field Name | Value
 
 Data must be sent in the request body as `x-www-form-urlencoded` data.
 
+If successful, returns ```{"success" : true}```.
+
+If unsuccessful, returns ```{"success" : false}```.
+
 ### Login
 `POST`
 http://localhost:3000/users/login
@@ -43,6 +47,10 @@ Field Name | Value
 `password` | plaintext password of the user
 
 Data must be sent in the request body as `x-www-form-urlencoded` data.
+
+If successful, returns ```{"success" : true}```.
+
+If unsuccessful, returns ```{"success" : false}```.
 
 ### Song File
 `GET`
