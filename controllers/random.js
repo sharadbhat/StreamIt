@@ -1,5 +1,5 @@
 const express = require('express');
-const getRandomID = require('../middlewares/get-random-id');
+const getRandomIDs = require('../middlewares/get-random-ids');
 
 const router = express.Router();
 
@@ -7,13 +7,13 @@ router.get('/', (req, res) => {
   success = true;
 
   try {
-    randomID = getRandomID();
+    randomID = getRandomIDs();
   } catch (e) {
     success = false;
   }
 
   if (success) {
-    res.json({"id" : randomID});
+    res.json({"ids" : randomID});
   }
   else {
     res.json({"success" : success});
