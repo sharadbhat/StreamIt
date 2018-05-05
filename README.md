@@ -3,6 +3,8 @@
 ## To run locally
 
 ```bash
+npm install
+
 node app.js
 ```
 
