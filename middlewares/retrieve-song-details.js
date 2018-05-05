@@ -3,7 +3,7 @@ const wait = require('wait-for-stuff');
 
 /**
  * Returns details of given song ID.
- * @param {string} songID - ID of the song.
+ * @param {number} lineNumber - Line on which the song details are present.
  * @returns {Object.<string, string>} - Dictionary of song details.
  */
 const retrieveSongDetails = function (lineNumber) {
