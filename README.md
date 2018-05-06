@@ -77,6 +77,21 @@ http://localhost:3000/image/< song-id >
 Returns a JPG file if it exists, else a JSON.
 
 ### Favorites
+To add a song as a favorite.
+
+`POST`
+http://localhost:3000/favorites/add
+
+#### Necessary fields
+
+Field Name | Value
+--- | ---
+`username` | username of the user
+`password` | plaintext password of the user
+`musicID` | ID of the song to be added as favorite
+
+To get songs favorited by a user.
+
 `GET`
 http://localhost:3000/favorites/< username >
 
