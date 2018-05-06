@@ -1,8 +1,10 @@
-Don Diablo|1#
-Dropgun|3#
-Home|7#
-Kshmr|5#
-Oliver Heldens|6#
-Phantogram|4#
-Rezz|11#
-San Holo|10#
+Daft Punk|12#
+Deadmau5|7#
+Don Diablo|2#
+Dropgun|4#
+Home|9#
+Kshmr|6#
+Oliver Heldens|8#
+Phantogram|5#
+Rezz|14#
+San Holo|13#
