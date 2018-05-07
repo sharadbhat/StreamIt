@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
   }
 
   if (success) {
-    res.json({'result' : closestMatches});
+    res.json({'results' : closestMatches});
   }
   else {
     res.json({'success' : success});
