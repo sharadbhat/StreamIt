@@ -10,7 +10,7 @@ const getRandomIDs = function () {
   contents.pop();
   shuffle(contents);
   randomIDs = [];
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 6; i++) {
     randomIDs.push(contents[i].split('|')[0]);
   }
   return randomIDs;
